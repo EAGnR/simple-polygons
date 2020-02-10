@@ -85,7 +85,18 @@ public class SimplePolygon
      */
     public double greatestX()
     {
-        return Double.NaN;  //DUMMY CODE; TO IMPLEMENT
+        //no such value if the list is empty
+        if (vertexList.isEmpty()) return Double.NaN;
+
+        double maxX = vertexList.get(0).getX();
+        for(int i = 1; i < vertexList.size(); i++)
+        {
+            double xVal = vertexList.get(i).getX();
+
+            if(xVal > maxX) maxX = xVal;
+        }
+
+        return maxX;
     }
 
     /**
@@ -95,7 +106,18 @@ public class SimplePolygon
      */
     public double greatestY()
     {
-        return Double.NaN;  //DUMMY CODE; TO IMPLEMENT
+        //no such value if the list is empty
+        if (vertexList.isEmpty()) return Double.NaN;
+
+        double maxY = vertexList.get(0).getY();
+        for(int i = 1; i < vertexList.size(); i++)
+        {
+            double yVal = vertexList.get(i).getY();
+
+            if(yVal > maxY) maxY = yVal;
+        }
+
+        return maxY;
     }
 
     /**
@@ -155,7 +177,18 @@ public class SimplePolygon
      */
     public double smallestX()
     {
-        return Double.NaN;  //DUMMY CODE; TO IMPLEMENT
+        //no such value if the list is empty
+        if (vertexList.isEmpty()) return Double.NaN;
+
+        double minX = vertexList.get(0).getX();
+        for(int i = 1; i < vertexList.size(); i++)
+        {
+            double xVal = vertexList.get(i).getX();
+
+            if(xVal < minX) minX = xVal;
+        }
+
+        return minX;
     }
 
     /**
@@ -165,7 +198,18 @@ public class SimplePolygon
      */
     public double smallestY()
     {
-        return Double.NaN;  //DUMMY CODE; TO IMPLEMENT
+        //no such value if the list is empty
+        if (vertexList.isEmpty()) return Double.NaN;
+
+        double minY = vertexList.get(0).getY();
+        for(int i = 1; i < vertexList.size(); i++)
+        {
+            double yVal = vertexList.get(i).getY();
+
+            if(yVal < minY) minY = yVal;
+        }
+
+        return minY;
     }
 
     /**
