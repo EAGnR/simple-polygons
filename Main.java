@@ -21,6 +21,7 @@ public class Main
         polygon2.addVertex(new Point(40, 15));
         polygon2.addVertex(new Point(25, 20));
 
-        System.out.println(polygon2);
+        System.out.println(polygon2.greatestX() + ", " + polygon2.greatestY() + ", " + polygon2.smallestX() + ", " + polygon2.smallestY());
+        System.out.println(polygon2.width() + ", " + polygon2.height());
     }
 }
