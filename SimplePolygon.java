@@ -127,7 +127,7 @@ public class SimplePolygon
      */
     public double height()
     {
-        return Double.NaN;  //DUMMY CODE; TO IMPLEMENT
+        return Math.abs(greatestY() - smallestY());
     }
 
     /**
@@ -259,6 +259,6 @@ public class SimplePolygon
      */
     public double width()
     {
-        return Double.NaN;  //DUMMY CODE; TO IMPLEMENT
+        return Math.abs(greatestX() - smallestX());
     }
 }
