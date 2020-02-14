@@ -75,7 +75,11 @@ public class SimplePolygon
      */
     public Rectangle boundingRectangle()
     {
-        return new Rectangle(new Point(), new Point(1, 1));  //DUMMY CODE; TO IMPLEMENT
+        Point upperLeft = new Point(smallestX(), greatestY());
+        Point lowerRight = new Point(greatestX(), smallestY());
+        Rectangle boundingRect = new Rectangle(upperLeft, lowerRight);
+
+        return boundingRect;
     }
 
     /**
@@ -150,7 +154,14 @@ public class SimplePolygon
      */
     public double perimeter()
     {
-        return Double.NaN;  //DUMMY CODE; TO IMPLEMENT
+        double perimeter = 0.0;
+        
+        for (int i = 0; i < vertexList.size(); i++)
+        {
+            perimeter += vertexList.get(i).distance(vertexList.get((i + 1) % vertexList.size()));
+        }
+
+        return perimeter;
     }
 
     /**
