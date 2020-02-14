@@ -23,5 +23,7 @@ public class Main
 
         System.out.println(polygon2.greatestX() + ", " + polygon2.greatestY() + ", " + polygon2.smallestX() + ", " + polygon2.smallestY());
         System.out.println(polygon2.width() + ", " + polygon2.height());
+        System.out.println("Polygon 2 perimeter: " + polygon2.perimeter());
+        System.out.println("Polygon 2 bounding rectangle: " + polygon2.boundingRectangle());
     }
 }
