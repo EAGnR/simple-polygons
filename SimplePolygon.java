@@ -48,7 +48,23 @@ public class SimplePolygon
      */
     public double area()
     {
-        return Double.NaN;  //DUMMY CODE; TO IMPLEMENT
+        double sum1 = 0.0;
+        double sum2 = 0.0;
+
+        for (int i = 0; i < vertexList.size(); i++) 
+        {
+            Point vertI = vertexList.get(i);
+            Point vertIplus1 = vertexList.get((i+1) % vertexList.size());
+
+            sum1 += vertI.getX() * vertIplus1.getY();
+            sum2 += vertIplus1.getX() * vertI.getY();
+        }
+
+        // This is using the shoelace formula to calculate the area.
+        // Only works for simple polygons.
+        double area = 0.5 * Math.abs(sum1 - sum2);
+
+        return area;
     }
 
     /**
