@@ -53,11 +53,13 @@ public class SimplePolygon
 
         double sum1 = 0.0;
         double sum2 = 0.0;
+        Point vertI;
+        Point vertIplus1;
 
         for (int i = 0; i < vertexList.size(); i++) 
         {
-            Point vertI = vertexList.get(i);
-            Point vertIplus1 = vertexList.get((i+1) % vertexList.size());
+            vertI = vertexList.get(i);
+            vertIplus1 = vertexList.get((i+1) % vertexList.size());
 
             sum1 += vertI.getX() * vertIplus1.getY();
             sum2 += vertIplus1.getX() * vertI.getY();
