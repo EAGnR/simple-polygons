@@ -48,6 +48,9 @@ public class SimplePolygon
      */
     public double area()
     {
+        // No such value if the list is empty..
+        if (vertexList.isEmpty()) return Double.NaN;
+
         double sum1 = 0.0;
         double sum2 = 0.0;
 
@@ -105,7 +108,7 @@ public class SimplePolygon
      */
     public double greatestX()
     {
-        //no such value if the list is empty
+        // No such value if the list is empty.
         if (vertexList.isEmpty()) return Double.NaN;
 
         double maxX = vertexList.get(0).getX();
@@ -126,7 +129,7 @@ public class SimplePolygon
      */
     public double greatestY()
     {
-        //no such value if the list is empty
+        // No such value if the list is empty.
         if (vertexList.isEmpty()) return Double.NaN;
 
         double maxY = vertexList.get(0).getY();
@@ -204,7 +207,7 @@ public class SimplePolygon
      */
     public double smallestX()
     {
-        //no such value if the list is empty
+        // No such value if the list is empty.
         if (vertexList.isEmpty()) return Double.NaN;
 
         double minX = vertexList.get(0).getX();
@@ -225,7 +228,7 @@ public class SimplePolygon
      */
     public double smallestY()
     {
-        //no such value if the list is empty
+        // No such value if the list is empty.
         if (vertexList.isEmpty()) return Double.NaN;
 
         double minY = vertexList.get(0).getY();
