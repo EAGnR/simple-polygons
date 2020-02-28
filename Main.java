@@ -12,6 +12,9 @@ public class Main
         SimplePolygon polygon1 = new SimplePolygon();
         SimplePolygon triangle1 = new SimplePolygon();
         SimplePolygon triangle2 = new SimplePolygon();
+        SimplePolygon line1 = new SimplePolygon();
+        SimplePolygon line2 = new SimplePolygon();
+        SimplePolygon line3 = new SimplePolygon();
 
         polygon1.addVertex(new Point(3,4));
         polygon1.addVertex(new Point(5,11));
@@ -27,12 +30,24 @@ public class Main
         triangle2.addVertex(new Point(4,5));
         triangle2.addVertex(new Point(7,8));
 
+        line1.addVertex(new Point(1,1));
+        line1.addVertex(new Point(3,3));
+
+        line2.addVertex(new Point(1,3));
+        line2.addVertex(new Point(5,3));
+
+        line3.addVertex(new Point(3,1));
+        line3.addVertex(new Point(3,5));
+
         System.out.printf("Polygon 1 greatest {x: %f, y: %f}, smallest {x: %f, y: %f}%n", 
             polygon1.greatestX(), polygon1.greatestY(), polygon1.smallestX(), polygon1.smallestY());
         System.out.printf("Polygon 1 width: %f, height %f%n", polygon1.width(), polygon1.height());
         System.out.printf("Polygon 1 perimeter: %f%n", polygon1.perimeter());
         System.out.printf("Polygon 1 bounding rectangle: %s%n", polygon1.boundingRectangle());
         System.out.printf("Polygon 1 area: %f, expected: 30.0%n%n", polygon1.area());
+        System.out.printf("Polygon 1: %s, isPointOnPolygon(4.0,5.0): %b, expected: true%n", polygon1, polygon1.isPointOnPolygon(new Point(4.0,5.0)));
+        System.out.printf("Polygon 1: %s, isPointOnPolygon(9.0,6.0): %b, expected: true%n", polygon1, polygon1.isPointOnPolygon(new Point(9.0,6.0)));
+        System.out.printf("Polygon 1: %s, isPointOnPolygon(2.0,6.0): %b, expected: false%n%n", polygon1, polygon1.isPointOnPolygon(new Point(2.0,6.0)));
 
         System.out.printf("Triangle 1 greatest {x: %f, y: %f}, smallest {x: %f, y: %f}%n", 
             triangle1.greatestX(), triangle1.greatestY(), triangle1.smallestX(), triangle1.smallestY());
@@ -47,5 +62,17 @@ public class Main
         System.out.printf("Triangle 2 perimeter: %f%n", triangle2.perimeter());
         System.out.printf("Triangle 2 bounding rectangle: %s%n", triangle2.boundingRectangle());
         System.out.printf("Triangle 2 area: %f, expected: 3.0%n%n", triangle2.area());
+
+        System.out.printf("Line 1 (slanted): %s, isPointOnPolygon(2.0,2.0): %b, expected: true%n", line1, line1.isPointOnPolygon(new Point(2.0,2.0)));
+        System.out.printf("Line 1 (slanted): %s, isPointOnPolygon(3.01,3.01): %b, expected: false%n", line1, line1.isPointOnPolygon(new Point(3.01,3.01)));
+        System.out.printf("Line 1 (slanted): %s, isPointOnPolygon(1.0,2.0): %b, expected: false%n%n", line1, line1.isPointOnPolygon(new Point(1.0,2.0)));
+        
+        System.out.printf("Line 2 (horizontal): %s, isPointOnPolygon(2.5,3.0): %b, expected: true%n", line2, line2.isPointOnPolygon(new Point(2.5,3.0)));
+        System.out.printf("Line 2 (horizontal): %s, isPointOnPolygon(6.0,3.0): %b, expected: false%n", line2, line2.isPointOnPolygon(new Point(6.0,3.0)));
+        System.out.printf("Line 2 (horizontal): %s, isPointOnPolygon(2.5,2.99): %b, expected: false%n%n", line2, line2.isPointOnPolygon(new Point(2.5,2.99)));
+
+        System.out.printf("Line 3 (vertical): %s, isPointOnPolygon(3.0,2.5): %b, expected: true%n", line3, line3.isPointOnPolygon(new Point(3.0,2.5)));
+        System.out.printf("Line 3 (vertical): %s, isPointOnPolygon(3.0,6.0): %b, expected: false%n", line3, line3.isPointOnPolygon(new Point(3.0,6.0)));
+        System.out.printf("Line 3 (vertical): %s, isPointOnPolygon(2.99,2.5): %b, expected: false%n%n", line3, line3.isPointOnPolygon(new Point(2.99,2.5)));
     }
 }
