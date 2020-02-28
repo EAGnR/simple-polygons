@@ -164,7 +164,7 @@ public class SimplePolygon
      */
     private static boolean isPointOnLineSegment(Point p, Point p1, Point p2)
     {
-        // True if point is equal to any other point.
+        // True if point is equal to any endpoint.
         if (p.equals(p1) || p.equals(p2)) 
         {
             return true;
