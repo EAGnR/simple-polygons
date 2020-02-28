@@ -52,5 +52,13 @@ public class Point
         return "(" + x + ", " + y + ")";
     }
 
-
+    @Override
+    public boolean equals(Object other)
+    {
+    	if(!other.getClass().getName().equals("Point")) return false;
+    	
+    	Point otherPoint = (Point) other;
+        return Math.abs(this.x - otherPoint.x) < Globals.POINT_EPSILON 
+            && Math.abs(this.y - otherPoint.y) < Globals.POINT_EPSILON;
+    }
 }
