@@ -244,8 +244,7 @@ public class SimplePolygon
                     return true;
                 }
 
-                // The Crossing Number Method, Algorithm 
-                // ([Franklin, 2000], [O'Rourke, 1998])
+                // The Crossing Number Method Algorithm ([Franklin, 2000], [O'Rourke, 1998])
                 // Rules:
                 // 1) An upward edge includes its starting endpoint, and excludes 
                 // its final endpoint.
@@ -261,7 +260,7 @@ public class SimplePolygon
                 // that the polygon is simple and not complex, so that using 
                 // in-out parity remains reliable, by the Jordan Curve Theorem.
                 // 
-                // Note that applying rules 1 and 2 leads to a point being on the 
+                // Note that applying rules 1 and 2 leads to a point on the 
                 // top boundary being determined as out, and applying rule 4 leads 
                 // to a point on the right boundary being determined as out. 
                 // So only a point being on the left and bottom boundaries would 
