@@ -280,9 +280,15 @@ public class SimplePolygon
                     // Calculate the x-coordinate of the edge-ray crossing 
                     // intersection. Using manipulated point-slope formula:
                     // x = ((y - y_1) / m) + x_1
-                    double slope = (p2.getY() - p1.getY()) / (p2.getX() - p1.getX());
-                    double x = ((p.getY() - p1.getY()) / slope) + p1.getX();
-                    
+                    // Since a vertical edge will lead to division by zero,
+                    // seeing that m = (y_2 - y_1) / (x_2 - x_1), then we get:
+                    // x = ((y - y_1) * (x_2 - x_1) / (y_2 - y_1)) + x_1
+                    // which will prevent division by zero for vertical edges.
+                    // We dont't have to worry about horizontal edges as we 
+                    // ignore them by Rule 3.
+                    double x = ((p.getY() - p1.getY()) * (p2.getX() - p1.getX()) 
+                        / (p2.getY() - p1.getY())) + p1.getX();
+
                     // Rule 4: The edge-ray intersection must be to the right 
                     // of point.
                     if (p.getX() < x)
