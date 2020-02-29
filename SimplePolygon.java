@@ -283,8 +283,8 @@ public class SimplePolygon
                     // Since a vertical edge will lead to division by zero,
                     // seeing that m = (y_2 - y_1) / (x_2 - x_1), then we get:
                     // x = ((y - y_1) * (x_2 - x_1) / (y_2 - y_1)) + x_1
-                    // which will prevent division by zero for vertical edges.
-                    // We dont't have to worry about horizontal edges as we 
+                    // Which will prevent division by zero for vertical edges,
+                    // and we dont't have to worry about horizontal edges as we 
                     // ignore them by Rule 3.
                     double x = ((p.getY() - p1.getY()) * (p2.getX() - p1.getX()) 
                         / (p2.getY() - p1.getY())) + p1.getX();
