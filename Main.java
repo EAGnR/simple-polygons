@@ -16,6 +16,7 @@ public class Main
         SimplePolygon line1 = new SimplePolygon();
         SimplePolygon line2 = new SimplePolygon();
         SimplePolygon line3 = new SimplePolygon();
+        SimplePolygon hexagon = new SimplePolygon();
 
         polygon1.addVertex(new Point(3,4));
         polygon1.addVertex(new Point(5,11));
@@ -43,6 +44,14 @@ public class Main
 
         line3.addVertex(new Point(3,1));
         line3.addVertex(new Point(3,5));
+
+        hexagon.addVertex(new Point(1,5));
+        hexagon.addVertex(new Point(3,3));
+        hexagon.addVertex(new Point(4,5));
+        hexagon.addVertex(new Point(5,2));
+        hexagon.addVertex(new Point(4,0));
+        hexagon.addVertex(new Point(1,0));
+        hexagon.addVertex(new Point(-5,2));
 
         System.out.printf("Polygon 1 greatest {x: %f, y: %f}, smallest {x: %f, y: %f}%n", 
             polygon1.greatestX(), polygon1.greatestY(), polygon1.smallestX(), polygon1.smallestY());
@@ -89,5 +98,10 @@ public class Main
         System.out.printf("Line 3 (vertical): %s, isPointOnPolygon(3.0,2.5): %b, expected: true%n", line3, line3.isPointOnPolygon(new Point(3.0,2.5)));
         System.out.printf("Line 3 (vertical): %s, isPointOnPolygon(3.0,6.0): %b, expected: false%n", line3, line3.isPointOnPolygon(new Point(3.0,6.0)));
         System.out.printf("Line 3 (vertical): %s, isPointOnPolygon(2.99,2.5): %b, expected: false%n%n", line3, line3.isPointOnPolygon(new Point(2.99,2.5)));
+   
+        System.out.printf("Hexagon: %s,isPointOnPolygon(1.0,3.0): %b, expected: true%n", hexagon, hexagon.isPointOnPolygon(new Point(1.0,3.0)));
+        System.out.printf("Hexagon: %s,isPointOnPolygon(5.0,3.0): %b, expected: false%n", hexagon, hexagon.isPointOnPolygon(new Point(5.0,3.0)));
+        System.out.printf("Hexagon: %s, perimeter: %.3f, expected: 26.496%n", hexagon, hexagon.perimeter());
+        System.out.printf("Hexagon: %s, area: %.3f, expected: 29.500%n", hexagon, hexagon.area());
     }
 }
