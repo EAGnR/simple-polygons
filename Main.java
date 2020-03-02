@@ -82,7 +82,7 @@ public class Main
         System.out.printf("Triangle 3 width: %f, height %f%n", triangle3.width(), triangle3.height());
         System.out.printf("Triangle 3 perimeter: %f%n", triangle3.perimeter());
         System.out.printf("Triangle 3 bounding rectangle: %s%n", triangle3.boundingRectangle());
-        System.out.printf("Triangle 3 area: %f, expected: 3.0%n", triangle3.area());
+        System.out.printf("Triangle 3 area: %f, expected: 21.0%n", triangle3.area());
         System.out.printf("Triangle 3: %s, isPointOnPolygon(4.0,5.0): %b, expected: true%n", triangle3, triangle3.isPointOnPolygon(new Point(4.0,5.0)));
         System.out.printf("Triangle 3: %s, isPointOnPolygon(9.0,6.0): %b, expected: false%n", triangle3, triangle3.isPointOnPolygon(new Point(9.0,6.0)));
         System.out.printf("Triangle 3: %s, isPointOnPolygon(2.0,6.0): %b, expected: false%n%n", triangle3, triangle3.isPointOnPolygon(new Point(2.0,6.0)));

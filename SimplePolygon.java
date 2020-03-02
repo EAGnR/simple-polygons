@@ -298,7 +298,9 @@ public class SimplePolygon
                 }
             }
 
-            return (crossings % 2 == 0) ? false : true;
+            // We return true if the number of crossings is odd,
+            // otherwise (if even) we return false.
+            return crossings % 2 != 0;
         }
     }
 
